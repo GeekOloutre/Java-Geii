@@ -1,0 +1,84 @@
+package com.example.tp03;
+import java.util.Scanner; // initialisation du lecture de clavier //
+public class Exo1
+{
+    private static int carre(int x) // initialisations de la fonction carre
+    {
+        return (x * x); // calcul et renvois du résultat //
+    }
+    private static int cube(int x) // initialisation de la fonction cube //
+    {
+        return (x*x*x); // calcul et renvois du résultat //
+    }
+    private static int premier(int x) // initialisation de la fonction premier //
+    {
+        int i,reste; // déclaration des variables //
+        if (x==1) // si x =1 //
+            return (0); // renvoyer 0 //
+        else if (x==2) // si X =2 //
+            return (1); // renvoyer 1 //
+        else // sinon si x est différent de 1 et 2 //
+        {
+            i=2;
+            do // boucle répéter //
+            {
+                reste=x % i; // modulo de x par i //
+                i=i+1; // incrémentation de i //
+            }
+            while (!(reste==0 || i==x)); // si le reste est différent de 0 ou i différent de x //
+            return (reste); // renvois de reste ///
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        int a,resul; // initialisation des variables //
+        char op, choix;
+        Scanner sc= new Scanner(System.in); // initialisation du scanner de touche //
+        System.out.println("Calculatrice2 V1.0");
+        do // boucle répéter de la calculatrice //
+        {
+            System.out.print("valeur de a = "); // afficher "valeur de a ="//
+            a=sc.nextInt(); // saisir a //
+            do // boucle répéter pour le choix de l'opération //
+            {
+                System.out.print("Opération : "); // afficher "opération"//
+                op=sc.next().charAt(0); // op prend la valeur de la prochaine enter //
+            }
+            while (!((op=='2')||(op=='3')||(op=='P')||(op=='p'))); // fin  de boucle répéter pour choisir l'opérateur //
+            if (op=='p') //si op = 'p' //
+                op='P'; // op prend la valeur 'P' //
+            switch (op) // cas parmi pour les calcul //
+            {
+                case '2': // cas pour op = 2//
+                    resul = carre(a); // calcul de a au carré //
+                    System.out.print("carre de a = " + resul); // afficher  " carre de a = " + résultat //
+                    break; // fin du cas pour op = 2 //
+                case '3': // cas pour op =3 //
+                    resul = cube(a); // calcul de a a cube //
+                    System.out.print("cube de a = " + resul); // afficher " cube de a = " + résultat //
+                    break; // fin du cas pour op = 3 //
+                case 'P': // cas pour po = P //
+                    if (a <= 0) // si a est négatif ou nul //
+                        System.out.print("a doit être positif"); //  afficher " a doit être positif "
+                    else // si a est positif //
+                    {
+
+                        resul = premier (a); // vérification si a est un  nombre premier //
+                        if (resul == 0) // si resul = 0 //
+                            System.out.print("a n'est pas un nombre premier"); // afficher " a n'est pas un nombre premier " //
+
+                        else // sinon //
+                            System.out.print("a est un nombre premier"); //  a est un nombre premier //
+                    }
+            }
+            do // boucle pour opération suivante //
+            {
+                System.out.println(" Autre operation ?"); // afficher " autre opération " //
+                choix=sc.next().charAt(0); // la prochaine enter clavier est  affecter a choix //
+            }
+            while (!(choix=='O'||choix=='o'||choix=='N'||choix=='n')); // fin de boucle pour l'opération suivante //
+        }
+        while (!(choix=='N'||choix=='n'));
+    }
+}

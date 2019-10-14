@@ -1,0 +1,55 @@
+package com.example.tp00;
+import java.util.Scanner;
+
+public class Exo5
+{
+    public static void main(String[] args)
+    {
+        int a, b, resul;                                                        // Initialisation des variables
+        byte op;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Calculatrice V3.0");                                // Afficher Calculatrice V3.0
+        System.out.println("Valeur de a = ");                                   // Valeur de a =
+        a = sc.nextInt();                                                       // Saisir A
+        System.out.println("Valeur de b = ");                                   // Afficher Valeur de b =
+        b = sc.nextInt();                                                       // Saisir B
+        System.out.println("Op" + (char)233 + "ration");                        // Afficher Opération
+        op = sc.nextByte();                                                     // Saisir Op
+        switch (op)
+        {
+            // Cas 1 Addition
+            case 1:
+                resul = a + b;
+                System.out.println("Addition de a + b = " + resul);
+                break;
+            // Cas 2 Soustraction
+            case 2 :
+                resul = a - b;
+                System.out.println("Soustraction de a - b = " + resul);
+                break;
+            // Cas 3 Multiplication
+            case 3 :
+                resul = a * b;
+                System.out.println("Multiplication de a x b = " + resul);
+                break;
+            // Cas 4 Division entière
+            case 4 :
+                resul = a / b;
+                System.out.println("Division de a / b = " + resul);
+                break;
+            // Cas 5 SI B=0 ALORS ERREUR sinon Reste Division entière
+            case 5 :
+                if (b == 0)
+                    System.out.println("Erreur : pas de divisions par 0 !");
+                else
+                {
+                    resul = a % b;
+                    System.out.println("Modulo a mod b = " + resul);
+                }
+                break;
+            default :
+                System.out.println("Pas d'op" + (char)233 + "ration");              // Afficher Pas d'opération
+                break;
+        }
+    }
+}

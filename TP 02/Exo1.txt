@@ -1,0 +1,23 @@
+package com.example.tp2;
+
+public class Exo1
+{
+    public static void main(String[] args)
+    {
+        int i, y;                           // Initialisation des variables
+        i = 0;
+    //--------------------------------//
+        while (i < 10)
+        {
+            y = 0;
+            while ( y < i)
+            {
+                System.out.print("+");      // Afficher le caractère '+'
+                y++;
+            }
+            System.out.println("");
+            i++;
+        }
+    //--------------------------------//
+    }
+}

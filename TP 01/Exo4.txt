@@ -1,0 +1,38 @@
+package com.example.tp00;
+import java.util.Scanner;
+
+public class Exo4
+{
+    public static void main(String[] args)
+    {
+        int a, b, resul;                                                //Initialisation des variables
+        byte op;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Calculatrice V2.0");                        //Afficher Calculatrice V2.0
+        System.out.println("Valeur de a =");                            //Afficher Valeur de a =
+        a = sc.nextInt();                                               //Saisir A
+        System.out.println("Valeur de b =");                            //Afficher Valeur de b
+        b = sc.nextInt();                                               //Saisir B
+        System.out.println("Op" + (char)233 + "ration");                //Afficher Opération
+        op = sc.nextByte();                                             //Saisir Op
+        //-------------------------------------------------------------//
+        if (op == 1)
+        {
+            resul = a + b;                                              // Addition
+            System.out.println("Addition de a + b =" + resul);
+        }
+        //-------------------------------------------------------------//
+        else
+        {
+            if (op == 2)
+            {
+                resul = a - b;                                          // Soustraction
+                System.out.println("Soustraction a - b = " + resul);
+            }
+            //--------------------------------------------------------//
+            else
+                System.out.println("Pas d'op" + (char) 233 + "ration"); // Afficher Pas d'opération
+        }
+    }
+}

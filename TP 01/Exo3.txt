@@ -1,0 +1,27 @@
+package com.example.tp00;
+import java.util.Scanner;
+
+public class Exo3
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int a, b, resul;                                    // Initialisation des variables
+        byte op;
+
+        System.out.println("Calculatrice V1.0");            // Afficher " Calculatrice V1.0 "
+        System.out.println("Valeur de a = ");
+        a = sc.nextInt();                                   // Saisir a
+        System.out.println("Valeur de b = ");
+        b = sc.nextInt();                                   // Saisir b
+        System.out.println("Op" + (char)233+ "ration");
+        op = sc.nextByte();
+        //----------------------------------------------//
+        if (op == 1)
+        {
+            resul = a + b;                                  //  Boucle d'opération
+            System.out.print("Addition a + b = " + resul);  // Afficher le résultat
+        }
+        //---------------------------------------------//
+    }
+}

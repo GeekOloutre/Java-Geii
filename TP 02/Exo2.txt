@@ -1,0 +1,71 @@
+package com.example.tp2;
+import java.util.Scanner;
+import java.lang.String;
+
+public class Exo2copy
+{
+    private static void calculatrice()
+    {
+        int a, b, resul;                                                        // Initialisation des variables
+        char op;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Valeur de a = ");                                   // Afficher("Valeur de a = ")
+        a = sc.nextInt();                                                       // Saisir a
+        System.out.println("Valeur de b = ");                                   // Afficher("Valeur de b = ")
+        b = sc.nextInt();                                                       // Saisir b
+        System.out.println("Op" + (char) 233 + "ration : ");                    // Afficher("Opération : ")
+        op = sc.next().charAt(0);                                               // Saisir op;
+    //----------------------------------------------------------------------------------------------//    Bloc Cas Parmis
+        switch (op)
+        {
+            case '+':
+                resul = a + b;
+                System.out.println("Addition de a + b = " + resul);
+                break;
+            case '-':
+                resul = a - b;
+                System.out.println("Soustraction de a - b = " + resul);
+                break;
+            case '*':
+                resul = a * b;
+                System.out.println("Multiplication de a x b = " + resul);
+                break;
+            case '/':
+                if (b == 0)
+                    System.out.println("Erreur : Division par 0");
+                else {
+                    resul = a / b;
+                    System.out.println("Division enti" + (char) 232 + "re a / b = " + resul);
+                }
+                break;
+            case 'm':
+                if (b == 0)
+                    System.out.println("Erreur : Division par 0");
+                else {
+                    resul = a % b;
+                    System.out.println("Modulo a mod b = " + resul);
+                }
+                break;
+            default:
+                System.out.println("Pas d'op" + (char) 233 + "ration");
+                break;
+        }
+    //----------------------------------------------------------------------------------------------//
+        reset();
+    }
+//----------------------------------------------------------------// Bloc Reset Autre Opération
+    private static void reset()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Autre Op" + (char)233 + "ration ?");
+        String str = sc.nextLine();
+        if (!str.equals("n"))
+            calculatrice();
+    }
+//----------------------------------------------------------------//
+    public static void main (String[] args)
+    {
+        System.out.println("Calculatrice V4.0");
+        calculatrice();
+    }
+}

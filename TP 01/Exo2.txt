@@ -1,0 +1,15 @@
+package com.example.tp00;
+
+public class Exo2
+{
+    public static void main(String[] args)
+    {
+        byte i;
+        char c;
+        System.out.println("Utilisation de variables");
+        i = 65;
+        c = 'i';
+        System.out.println("Valeur de " + c + " : " + i);
+        System.out.println("caractere correspondant  :" + (char)i);
+    }
+}
